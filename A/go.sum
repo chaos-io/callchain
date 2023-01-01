@@ -1,0 +1,8 @@
+github.com/chaos-io/go-trace v0.0.0-20230101074243-d099d0a857ba h1:owDKjfwN+T/oZtvbCm91F784xl8v4tks0TBort/lQnM=
+github.com/chaos-io/go-trace v0.0.0-20230101074243-d099d0a857ba/go.mod h1:AE47CqyY0DBd1tZykqbBnrwncq3ZyqaHpJjd5oYZqu0=
+github.com/etherlabsio/healthcheck/v2 v2.0.0 h1:oKq8cbpwM/yNGPXf2Sff6MIjVUjx/pGYFydWzeK2MpA=
+github.com/etherlabsio/healthcheck/v2 v2.0.0/go.mod h1:huNVOjKzu6FI1eaO1CGD3ZjhrmPWf5Obu/pzpI6/wog=
+github.com/gorilla/mux v1.8.0 h1:i40aqfkR1h2SlN9hojwV5ZA91wcXFOvkdNIeFDP5koI=
+github.com/gorilla/mux v1.8.0/go.mod h1:DVbg23sWSpFRCP0SfiEN6jmj59UnW/n46BH5rLB71So=
+github.com/rs/cors v1.8.3 h1:O+qNyWn7Z+F9M0ILBHgMVPuB1xTOucVd5gtaYyXBpRo=
+github.com/rs/cors v1.8.3/go.mod h1:XyqrcTp5zjWr1wsJ8PIRZssZ8b/WMcMf71DJnit4EMU=
