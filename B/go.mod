@@ -1,4 +1,4 @@
-module chaos-io/callchain/A
+module chaos-io/callchain/B
 
 go 1.19
 

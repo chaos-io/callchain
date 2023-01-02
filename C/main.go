@@ -8,13 +8,13 @@ import (
 	"github.com/gorilla/mux"
 	"github.com/rs/cors"
 
-	"chaos-io/callchain/A/handler"
+	"chaos-io/callchain/C/handler"
 )
 
 var (
 	host        = flag.String("HOST", "http://127.0.0.1", "HOST for the server")
-	httpAddress = flag.String("HTTP_ADDRESS", ":40001", "HTTP address for the server")
-	callAddress = flag.String("CALL_ADDRESS", ":40011", "Call address for the server")
+	httpAddress = flag.String("HTTP_ADDRESS", ":40021", "HTTP address for the server")
+	callAddress = flag.String("CALL_ADDRESS", ":40031", "Call address for the server")
 )
 
 func main() {
@@ -25,10 +25,8 @@ func main() {
 
 	go func() {
 		r := mux.NewRouter()
-		a := handler.NewA(*host+*httpAddress, *host+*callAddress)
-		r.HandleFunc("/", a.CallItself)
-		r.HandleFunc("/B", a.CallB)
-		r.HandleFunc("/C", a.CallC)
+		c := handler.NewC(*host+*httpAddress, *host+*callAddress)
+		r.HandleFunc("/", c.CallItself)
 		r.Use(handler.MiddlewareTrace)
 		//r.Use(mux.CORSMethodMiddleware(r))
 		h := cors.AllowAll().Handler(r)
