@@ -8,6 +8,6 @@ FROM alpine:3.17
 ENV TZ Asia/Shanghai
 WORKDIR /app
 COPY --from=builder /app/main /app/main
-EXPOSE 40021
+EXPOSE 30021
 CMD ["./main"]
 

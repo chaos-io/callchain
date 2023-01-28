@@ -13,8 +13,8 @@ import (
 
 var (
 	host        = flag.String("HOST", "http://127.0.0.1", "HOST for the server")
-	httpAddress = flag.String("HTTP_ADDRESS", ":40001", "HTTP address for the server")
-	callAddress = flag.String("CALL_ADDRESS", ":40011", "Call address for the server")
+	httpAddress = flag.String("HTTP_ADDRESS", ":30001", "HTTP address for the server")
+	callAddress = flag.String("CALL_ADDRESS", ":30011", "Call address for the server")
 )
 
 func main() {
