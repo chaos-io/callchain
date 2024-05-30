@@ -21,7 +21,7 @@ func NewA(url, callUrl string) *A {
 }
 
 func (a *A) CallItself(w http.ResponseWriter, r *http.Request) {
-	json.NewEncoder(w).Encode("A")
+	json.NewEncoder(w).Encode("a")
 }
 
 func (a *A) CallB(w http.ResponseWriter, r *http.Request) {
@@ -33,7 +33,7 @@ func (a *A) CallB(w http.ResponseWriter, r *http.Request) {
 }
 
 func (a *A) CallC(w http.ResponseWriter, r *http.Request) {
-	if err := httpGet(a.CallUrl+"/C", &a.Target); err != nil {
+	if err := httpGet(a.CallUrl+"/c", &a.Target); err != nil {
 		http.Error(w, err.Error(), http.StatusBadRequest)
 		return
 	}

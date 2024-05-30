@@ -19,5 +19,5 @@ func NewC(url, callUrl string) *C {
 }
 
 func (c *C) CallItself(w http.ResponseWriter, r *http.Request) {
-	json.NewEncoder(w).Encode("C")
+	json.NewEncoder(w).Encode("c")
 }

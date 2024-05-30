@@ -21,7 +21,7 @@ func NewB(url, callUrl string) *B {
 }
 
 func (b *B) CallItself(w http.ResponseWriter, r *http.Request) {
-	json.NewEncoder(w).Encode("B")
+	json.NewEncoder(w).Encode("b")
 }
 
 func (b *B) CallC(w http.ResponseWriter, r *http.Request) {
