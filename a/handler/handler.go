@@ -7,28 +7,37 @@ import (
 	"net/http"
 )
 
-type B struct {
+type A struct {
 	Url     string
 	CallUrl string
 	Target  string
 }
 
-func NewB(url, callUrl string) *B {
-	return &B{
+func NewA(url, callUrl string) *A {
+	return &A{
 		Url:     url,
 		CallUrl: callUrl,
 	}
 }
 
-func (b *B) CallItself(w http.ResponseWriter, r *http.Request) {
-	json.NewEncoder(w).Encode("B")
+func (a *A) CallItself(w http.ResponseWriter, r *http.Request) {
+	json.NewEncoder(w).Encode("A")
 }
 
-func (b *B) CallC(w http.ResponseWriter, r *http.Request) {
-	if err := httpGet(b.CallUrl, &b.Target); err != nil {
+func (a *A) CallB(w http.ResponseWriter, r *http.Request) {
+	if err := httpGet(a.CallUrl, &a.Target); err != nil {
 		http.Error(w, err.Error(), http.StatusBadRequest)
+		return
 	}
-	fmt.Fprintf(w, "%q\n", b.Target)
+	fmt.Fprintf(w, "%q\n", a.Target)
+}
+
+func (a *A) CallC(w http.ResponseWriter, r *http.Request) {
+	if err := httpGet(a.CallUrl+"/C", &a.Target); err != nil {
+		http.Error(w, err.Error(), http.StatusBadRequest)
+		return
+	}
+	fmt.Fprintf(w, "%q\n", a.Target)
 }
 
 func httpGet(url string, resp interface{}) error {
