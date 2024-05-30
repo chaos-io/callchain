@@ -29,7 +29,7 @@ func main() {
 		r.HandleFunc("/", b.CallItself)
 		r.HandleFunc("/C", b.CallC)
 		r.Use(handler.MiddlewareTrace)
-		//r.Use(mux.CORSMethodMiddleware(r))
+		// r.Use(mux.CORSMethodMiddleware(r))
 		h := cors.AllowAll().Handler(r)
 		errc <- http.ListenAndServe(*httpAddress, h)
 	}()

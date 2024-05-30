@@ -28,7 +28,7 @@ func main() {
 		c := handler.NewC(*host+*httpAddress, *host+*callAddress)
 		r.HandleFunc("/", c.CallItself)
 		r.Use(handler.MiddlewareTrace)
-		//r.Use(mux.CORSMethodMiddleware(r))
+		// r.Use(mux.CORSMethodMiddleware(r))
 		h := cors.AllowAll().Handler(r)
 		errc <- http.ListenAndServe(*httpAddress, h)
 	}()
